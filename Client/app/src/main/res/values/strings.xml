@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Client</string>
+    <string name="mainButton">单击我</string>
+    <string name="login">登录</string>
+    <string name="connect">连接</string>
+    <string name="host">host</string>
+    <string name="port">port</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="passive">被动模式</string>
+    <string name="active">主动模式</string>
+    <string name="folder">文件夹</string>
+    <string name="file">文件</string>
+    <string name="singleThread">单线程</string>
+    <string name="multipleThread">多线程</string>
+    <string name="notLogIn">未登录</string>
+    <string name="hasLoggedIn">已登录</string>
+    <string name="binary">binary</string>
+    <string name="ascii">ASCII</string>
+    <string name="mode">Mode: </string>
+    <string name="structure">Structure: </string>
+    <string name="stream">流模式</string>
+    <string name="bar">块模式</string>
+    <string name="compressed">压缩模式</string>
+    <string name="fileStructure">File</string>
+    <string name="record">Record</string>
+    <string name="page">Page</string>
+    <string name="upload">上传</string>
+    <string name="download">下载</string>
+    <string name="unconnected">未连接</string>
+    <string name="connected">已连接</string>
+    <string name="quit">断开连接</string>
+    <string name="hasConnected">您已经连接过了</string>
+    <string name="errorUnconnected">尚未连接</string>
+    <string name="errorLogIn">尚未登录</string>
+</resources>

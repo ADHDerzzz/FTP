@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/port"
+        android:layout_width="170dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:hint="@string/port"
+        app:layout_constraintBottom_toTopOf="@+id/connect"
+        app:layout_constraintEnd_toStartOf="@+id/binaryAscii"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/host" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/username"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:hint="@string/username"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toStartOf="@+id/singleMultiple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/connect" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="48dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/login"
+        app:layout_constraintEnd_toStartOf="@+id/upload"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/singleMultiple" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="37dp"
+        android:text="@string/login"
+        app:layout_constraintBottom_toTopOf="@+id/mode"
+        app:layout_constraintStart_toStartOf="@+id/password" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/host"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="28dp"
+        android:hint="@string/host"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/passiveActive"/>
+
+    <Button
+        android:id="@+id/connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:text="@string/connect"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/port" />
+
+    <TextView
+        android:id="@+id/connectStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="145dp"
+        android:layout_marginEnd="39dp"
+        android:text="@string/unconnected"
+        app:layout_constraintBaseline_toBaselineOf="@+id/connect"
+        app:layout_constraintEnd_toStartOf="@+id/fileFolder"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/logInStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="14dp"
+        android:text="@string/notLogIn"
+        app:layout_constraintBottom_toBottomOf="@+id/login"
+        app:layout_constraintStart_toEndOf="@+id/login" />
+
+    <Switch
+        android:id="@+id/passiveActive"
+        android:layout_width="105dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="29dp"
+        android:text="@string/passive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/binaryAscii"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="51dp"
+        android:text="@string/binary"
+        app:layout_constraintBottom_toBottomOf="@+id/fileFolder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/port"
+        app:layout_constraintTop_toTopOf="@+id/passiveActive"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <RadioGroup
+        android:id="@+id/mode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/structure"
+        app:layout_constraintTop_toBottomOf="@+id/download">
+
+        <TextView
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:text="@string/mode" />
+
+        <RadioButton
+            android:id="@+id/stream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stream" />
+
+        <RadioButton
+            android:id="@+id/block"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:text="@string/bar" />
+
+        <RadioButton
+            android:id="@+id/compressed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/compressed" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/structure"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/mode">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/structure" />
+
+        <RadioButton
+            android:id="@+id/file"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:text="@string/fileStructure" />
+
+        <RadioButton
+            android:id="@+id/record"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content"
+            android:text="@string/record" />
+
+        <RadioButton
+            android:id="@+id/page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/page" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="39dp"
+        android:text="@string/upload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/password"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/download"
+        app:layout_constraintStart_toStartOf="@+id/upload"
+        app:layout_constraintTop_toBottomOf="@+id/upload" />
+
+    <Switch
+        android:id="@+id/fileFolder"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="51dp"
+        android:text="@string/fileStructure"
+        app:layout_constraintBottom_toBottomOf="@+id/singleMultiple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/connectStatus"
+        app:layout_constraintTop_toBottomOf="@+id/passiveActive"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/singleMultiple"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="14dp"
+        android:text="@string/singleThread"
+        app:layout_constraintBottom_toTopOf="@+id/upload"
+        app:layout_constraintEnd_toEndOf="@+id/fileFolder"
+        app:layout_constraintStart_toStartOf="@+id/fileFolder"
+        app:layout_constraintTop_toBottomOf="@+id/connectStatus"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Button
+        android:id="@+id/quit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/structure" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
